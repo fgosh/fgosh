@@ -1,0 +1,39 @@
+{
+  "summary": "Frontend-only verification of the France map pin repositioning fix on /zones-intervention and homepage ZoneTeaser. Measured each pin's rendered center against the data-testid='france-map' container via getBoundingClientRect. All pins land inside the France silhouette, clustered in the SW near Toulouse. The 'Toulouse' pin is pulsing and placed within the required bounds on both pages. City search filter on /zones-intervention correctly filters communes when typing 'Toul'.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "FranceMap tooltip", "issues": ["Hidden tooltip <span> (opacity-0) sits above pins without pointer-events:none; when pins are clustered (e.g., around Toulouse) an adjacent pin's invisible tooltip can intercept pointer events and block hover on neighbouring pins. Add 'pointer-events-none' when hover !== pin.city to make tooltips non-blocking."]}
+    ]
+  },
+  "measurements": {
+    "zones_page_toulouse_pct": {"x": 38.51, "y": 71.01, "required_x": "[33,42]", "required_y": "[66,75]", "status": "PASS"},
+    "homepage_toulouse_pct": {"x": 38.34, "y": 70.84, "status": "PASS"},
+    "all_pins_zones_page": {
+      "toulouse": [38.51, 71.01], "blagnac": [37.81, 70.31], "colomiers": [37.41, 70.51],
+      "tournefeuille": [37.51, 70.81], "cugnaux": [37.51, 71.21], "muret": [37.41, 71.91],
+      "balma": [38.41, 70.51], "l-union": [38.31, 70.11], "castanet-tolosan": [38.41, 71.41],
+      "fronton": [37.71, 68.51], "revel": [41.41, 71.91], "grenade": [37.21, 69.11],
+      "auch": [32.91, 70.21], "saint-gaudens": [33.81, 75.11]
+    },
+    "france_path_bbox_within_map": {"x_pct": "[0.0, 85.8]", "y_pct": "[2.2, 90.4]"},
+    "note": "All 14 pins fall inside the France path bbox and are clustered in the SW quadrant as expected. Visual confirmation screenshot shows pins overlapping the France silhouette around Toulouse."
+  },
+  "search_filter": {"typed": "Toul", "contains_toulouse": true, "status": "PASS"},
+  "test_report_links": [],
+  "action_items": [
+    "(Minor UX, non-blocking) Add 'pointer-events-none' to the tooltip span in /app/frontend/src/components/FranceMap.jsx line 48 when the pin isn't hovered, so invisible tooltips from clustered pins don't intercept hover on adjacent pins."
+  ],
+  "critical_code_review_comments": [
+    "FranceMap.jsx: tooltip span lacks pointer-events-none when hidden (opacity-0), causing hover-interception between tightly clustered pins (Toulouse cluster). Low priority but affects tooltip discoverability for inner pins.",
+    "data.js MAP_PINS calibration appears correct: Toulouse 37.3/69.8 renders at ~38.5%/71% which is within the France silhouette's SW region."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100% (pin positioning + search filter)"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Pin positioning fix is verified correct on both /zones-intervention and homepage. Toulouse pin at ~38.5%/71% (desktop 1920x1080). If main agent decides to polish, address the pointer-events-none tooltip issue noted above."
+}

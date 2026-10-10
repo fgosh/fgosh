@@ -46,7 +46,7 @@ export const FranceMap = () => {
           />
           <span
             className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 whitespace-nowrap bg-black border border-voltage/40 text-voltage font-mono2 text-[10px] uppercase tracking-wider px-2 py-1 transition-opacity duration-200 z-20 ${
-              hover === pin.city ? "opacity-100" : "opacity-0"
+              hover === pin.city ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
             {pin.city}
