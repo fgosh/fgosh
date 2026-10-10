@@ -1,0 +1,198 @@
+{
+  "brand_identity": {
+    "company_name": "STRIKE FRELONS & GUÊPES",
+    "tagline": "Intervention d'Urgence 7j/7 - Destruction de Nids de Guêpes & Frelons",
+    "concept": "Tactical Caution & Precision Pest Elimination",
+    "vibe": "High-impact Awwwards editorial style mixed with tactical hazard warning aesthetics, single-voltage hazard yellow, crisp 1px hair-lines, kinetic scroll reveals, and high visual authority.",
+    "seo_keywords": [
+      "destruction nid frelons toulouse",
+      "destruction nid guepes haute-garonne",
+      "frelon asiatique intervention rapide",
+      "desinsectisation certibiocide",
+      "tarif nid frelon 31"
+    ]
+  },
+  "typography": {
+    "font_family_heading": "Outfit, 'Cabinet Grotesk', system-ui, sans-serif",
+    "font_family_body": "Plus Jakarta Sans, 'DM Sans', system-ui, sans-serif",
+    "font_family_mono": "'JetBrains Mono', 'Courier New', monospace",
+    "rules": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-amber-400 leading-none",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-tight text-zinc-100",
+      "h3": "text-xl sm:text-2xl font-semibold text-amber-300 tracking-tight",
+      "body": "text-base leading-relaxed text-zinc-300",
+      "mono_label": "font-mono text-xs uppercase tracking-widest text-amber-400 bg-zinc-900/80 px-2 py-1 border border-amber-400/30"
+    }
+  },
+  "colors": {
+    "theme": "Dark High-Contrast Hazard & Obsidian",
+    "primary_voltage_yellow": "#FFE600",
+    "primary_amber_accent": "#FFC700",
+    "dark_background": "#09090B",
+    "surface_card": "#121215",
+    "surface_card_hover": "#1A1A1E",
+    "border_subtle": "#27272A",
+    "border_hazard": "rgba(255, 230, 0, 0.4)",
+    "text_primary": "#FAFAFA",
+    "text_secondary": "#A1A1AA",
+    "text_muted": "#71717A",
+    "alert_red_pin": "#EF4444",
+    "success_green": "#22C55E",
+    "prohibited_colors": [
+      "#7351B7",
+      "#1B93A4"
+    ]
+  },
+  "layout_and_spacing": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "spacing_scale": "Generous (p-6 to p-12 for containers, py-16 to py-24 for page sections)",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "header_style": "Sticky top-0 z-50 backdrop-blur-xl bg-zinc-950/85 border-b border-zinc-800 text-zinc-100 px-4 py-3 shadow-2xl transition-all duration-300",
+    "footer_style": "bg-zinc-950 border-t-2 border-amber-400 py-16 text-zinc-400"
+  },
+  "motion_and_interactions": {
+    "scroll_engine": "Lenis smooth scroll integration (lerp 0.08)",
+    "framer_motion_effects": [
+      "Staggered reveal of section items on viewport enter",
+      "Hover scaling on cards with border glow transition",
+      "Kinetic text marquee band drifting infinitely across screen",
+      "France interactive map hover pin pulse & tooltip animation",
+      "Video modal pop-in transition"
+    ]
+  },
+  "pages": [
+    {
+      "id": "accueil",
+      "name": "Accueil",
+      "path": "/",
+      "sections": [
+        "Kinetic Hero with Company Reveal & Response Time Badge",
+        "Emergency Action Banner (Direct Call / SMS CTA)",
+        "Trust Metrics Counter (1500+ nids détruits, <2h intervention, 4.9/5 Google)",
+        "Services Grid (Guêpes / Frelons Européens / Frelons Asiatiques)",
+        "Insect Identification Guide (Interactive comparison macro photos)",
+        "6-Step Intervention Process Timeline",
+        "Why Choose Us Trust Badges & Certibiocide License N°052955",
+        "France Intervention Map with Red Pins & City Search",
+        "Transparent 3-Tier Pricing Table (100€ / 130€ / 150€)",
+        "Intervention Video Showcase",
+        "Client Reviews & 30-Day Guarantee Callout",
+        "FAQ Accordion",
+        "Quote Request Form"
+      ]
+    },
+    {
+      "id": "frelon-asiatique",
+      "name": "Frelons asiatiques",
+      "path": "/frelons-asiatiques",
+      "sections": [
+        "Hero: Espèce Invasive Vespa Velutina",
+        "Danger & Diagnostic Guide",
+        "Protocoles de Destruction en Haute Hauteur",
+        "Signalement Obligatoire et Réglementation Occitanie",
+        "Tarification spécifique Canopée (à partir de 150€)"
+      ]
+    },
+    {
+      "id": "frelon-europeen",
+      "name": "Frelons européens",
+      "path": "/frelons-europeens",
+      "sections": [
+        "Hero: Vespa Crabro - Biologie et Comportement",
+        "Localisation des nids (Combles, Charpentes, Troncs creux)",
+        "Intervention de Nuit ou Crépuscule",
+        "Demande d'Intervention Rapide"
+      ]
+    },
+    {
+      "id": "guepes",
+      "name": "Guêpes",
+      "path": "/guepes",
+      "sections": [
+        "Hero: Eradication Nids de Guêpes Vespula",
+        "Zones à risques (Volets roulants, Sous toiture, Sol, Haies)",
+        "Conseils de sécurité immédiats avant l'arrivée du technicien",
+        "Formulaire devis express"
+      ]
+    },
+    {
+      "id": "zones-intervention",
+      "name": "Zones d'intervention",
+      "path": "/zones-intervention",
+      "sections": [
+        "Carte Interactive de France avec Épingles Rouges (50+ Communes Toulouse & Occitanie)",
+        "Recherche instantanée par Code Postal ou Nom de Ville",
+        "Liste complète des communes desservies sous 2 heures"
+      ]
+    },
+    {
+      "id": "tarifs",
+      "name": "Tarifs",
+      "path": "/tarifs",
+      "sections": [
+        "Simulateur de Prix en ligne selon la Hauteur du Nid",
+        "Grille Tarifaire Transparente Sans Surprise (Garantie 30j incluse)",
+        "Prise en charge Assurance Multirisque Habitation"
+      ]
+    },
+    {
+      "id": "videos",
+      "name": "Vidéos",
+      "path": "/videos",
+      "sections": [
+        "Galerie Vidéo d'Interventions Réelles en Direct",
+        "Lecteur Modal Intégré pour Extraits YouTube & Shorts",
+        "Chaîne Officielle et Conseils de Prévention"
+      ]
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "path": "/contact",
+      "sections": [
+        "Formulaire Devis Gratuit avec Envoi Photo du Nid",
+        "Accès Direct SMS d'Urgence (06 75 36 24 05)",
+        "Coordonnées & Horaires 7j/7"
+      ]
+    }
+  ],
+  "key_components": {
+    "HeaderNav": "Sticky nav with brand logo, hazard strip header border, phone CTA button, emergency indicator badge.",
+    "KineticHero": "Big punchy display headline with live dispatch timer, background video overlay, instant SMS/Call action buttons.",
+    "ServicesGrid": "Bento-style grid featuring Guêpes, Frelons Européens, Frelons Asiatiques with macro imagery and detail modals.",
+    "IdentificationSection": "Tabs or slider showing close-ups, sizes (12-17mm vs 20-30mm vs 25-35mm), nest structure, and aggressiveness rating.",
+    "ProcessTimeline": "6-card visual journey with step numbers (1. SMS -> 2. Diagnostic -> 3. RDV 2h -> 4. Sécurité -> 5. Destruction -> 6. Garantie 30j).",
+    "FranceMapPins": "Custom SVG Interactive France & Occitanie Map with pulsing red markers for Toulouse, Colomiers, Muret, Blagnac, Tournefeuille, etc.",
+    "PricingCalculator": "Interactive slider for height selection (<8m: 100€, 8-12m: 130€, >12m: 150€) showing exact inclusions.",
+    "VideoGalleryModal": "Grid of high-def video cards with play buttons opening modal video overlays.",
+    "StickyCallSMSBar": "Bottom fixed mobile floating bar with instant trigger for tel:+33675362405 and SMS prefilled message.",
+    "ContactQuoteForm": "Clean dark form with inputs for name, phone, city, zip, photo attachment simulation, and prompt quote generation."
+  },
+  "image_urls": {
+    "technician_protective_suit": "https://images.unsplash.com/photo-1584969518521-d0ddb3922bab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHw0fHxwZXN0JTIwY29udHJvbCUyMGV4dGVybWluYXRvciUyMHN1aXR8ZW58MHx8fHwxNzkxNjQyMzU2fDA&ixlib=rb-4.1.0&q=85",
+    "wasp_macro_close_up": "https://images.unsplash.com/photo-1663780882736-5626cdb04c40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHx3YXNwJTIwaG9ybmV0JTIwcGVzdCUyMGNvbnRyb2wlMjB0ZWNobmljaWFuJTIwcHJvdGVjdGl2ZSUyMHN1aXR8ZW58MHx8fHwxNzkxNjQyMzQ5fDA&ixlib=rb-4.1.0&q=85",
+    "hornet_head_close_up": "https://images.unsplash.com/photo-1568325158004-424a88bea395?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHx3YXNwJTIwaG9ybmV0JTIwcGVzdCUyMGNvbnRyb2wlMjB0ZWNobmljaWFuJTIwcHJvdGVjdGl2ZSUyMHN1aXR8ZW58MHx8fHwxNzkxNjQyMzQ5fDA&ixlib=rb-4.1.0&q=85",
+    "exterminator_spraying": "https://images.unsplash.com/photo-1600092965062-2b0fd76ade11?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwyfHxwZXN0JTIwY29udHJvbCUyMGV4dGVybWluYXRvciUyMHN1aXR8ZW58MHx8fHwxNzkxNjQyMzU2fDA&ixlib=rb-4.1.0&q=85",
+    "hazard_background_texture": "https://images.unsplash.com/photo-1786356470225-efdefbef1cf3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwyfHx5ZWxsb3clMjBibGFjayUyMHRhY3RpY2FsJTIwaGF6YXJkJTIwYmFja2dyb3VuZCUyMHRleHR1cmV8ZW58MHx8fHwxNzkxNjQyMzU2fDA&ixlib=rb-4.1.0&q=85",
+    "hazard_stripes": "https://images.unsplash.com/photo-1694842493248-4ebc9a3fe479?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwzfHx5ZWxsb3clMjBibGFjayUyMHRhY3RpY2FsJTIwaGF6YXJkJTIwYmFja2dyb3VuZCUyMHRleHR1cmV8ZW58MHx8fHwxNzkxNjQyMzU2fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "testing_and_accessibility": {
+    "data_testid_rule": "MUST add data-testid in kebab-case to all interactive buttons, inputs, tabs, map pins, and cards (e.g. data-testid='hero-sms-button', data-testid='pricing-calculator-slider', data-testid='map-pin-toulouse').",
+    "contrast": "APCA high contrast standards compliant. Pure black text on yellow elements, high opacity background blurs for non-collision reading."
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons. Use Phosphor Icons, Lucide, or Heroicons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing."
+  ]
+}

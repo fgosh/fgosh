@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --voltage: #ffe600;
+  --voltage-deep: #ffc700;
+  --ink: #09090b;
+}
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 6% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 8% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 54 100% 50%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 4% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 14%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 54 100% 50%;
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 54 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scrollbar-color: #3f3f46 #09090b;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: "Outfit", system-ui, sans-serif;
+  }
+  ::selection {
+    background: var(--voltage);
+    color: #09090b;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Outfit", system-ui, sans-serif;
+  }
+  .font-mono2 {
+    font-family: "JetBrains Mono", monospace;
+  }
+  .text-voltage {
+    color: var(--voltage);
+  }
+  .bg-voltage {
+    background-color: var(--voltage);
+  }
+  .border-voltage {
+    border-color: var(--voltage);
+  }
+  .container-x {
+    @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-10;
+  }
+  .hazard-strip {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      var(--voltage) 0,
+      var(--voltage) 18px,
+      #09090b 18px,
+      #09090b 36px
+    );
+  }
+  .glass {
+    background: rgba(18, 18, 21, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Marquee */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-x 32s linear infinite;
+}
+
+/* Pin pulse */
+@keyframes pin-pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  70% { transform: scale(2.6); opacity: 0; }
+  100% { opacity: 0; }
+}
+.pin-ping {
+  animation: pin-pulse 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #09090b; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--voltage); }
+
+@layer base {
+  [data-debug-wrapper="true"] { display: contents !important; }
+}

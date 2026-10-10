@@ -1,0 +1,19 @@
+# TGF — Toulouse Guêpes Frelons
+
+TGF est une entreprise de désinsectisation spécialisée dans la destruction de nids
+de guêpes, de frelons européens et de frelons asiatiques à Toulouse, en Haute-Garonne (31)
+et dans le Gers (32). Intervention rapide 7 jours sur 7, devis gratuit par téléphone.
+Technicien agréé Certibiocide.
+
+## Pages principales
+- Accueil (/): présentation des services, zone d'intervention, tarifs et demande de devis.
+- Frelons asiatiques (/frelons-asiatiques): espèce invasive Vespa velutina, destruction en hauteur.
+- Frelons européens (/frelons-europeens): Vespa crabro, nids dans combles et charpentes.
+- Guêpes (/guepes): nids sous toiture, volets roulants, haies et au sol.
+- Zones d'intervention (/zones-intervention): carte de France et communes desservies.
+- Tarifs (/tarifs): grille tarifaire transparente, à partir de 95€.
+- Vidéos (/videos): interventions filmées.
+- Contact (/contact): demande de devis gratuit et coordonnées.
+
+## Contact
+Téléphone : 06 20 64 15 11 — intervention 7J/7.
