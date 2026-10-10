@@ -111,6 +111,15 @@
   animation: marquee-x 32s linear infinite;
 }
 
+/* Green LED blink */
+@keyframes led-blink {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+.led-blink {
+  animation: led-blink 1.1s ease-in-out infinite;
+}
+
 /* Pin pulse */
 @keyframes pin-pulse {
   0% { transform: scale(1); opacity: 0.7; }

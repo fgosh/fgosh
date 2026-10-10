@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, MessageSquare } from "lucide-react";
 import { Logo } from "../Logo";
-import { NAV, TEL_HREF, CONTACT } from "../../lib/data";
+import { NAV, TEL_HREF, SMS_HREF, CONTACT } from "../../lib/data";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
@@ -21,9 +21,27 @@ export const Header = () => {
 
   return (
     <>
-      <div className="hazard-strip h-1.5 w-full fixed top-0 left-0 z-[60]" />
+      {/* Barre d'annonce rouge */}
+      <a
+        href={SMS_HREF}
+        data-testid="announcement-bar"
+        className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-2.5 bg-red-600 text-white text-[11px] sm:text-sm font-semibold px-4 h-9 hover:bg-red-700 transition-colors duration-200"
+      >
+        <span className="relative flex h-2.5 w-2.5 shrink-0">
+          <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 led-blink" />
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400 shadow-[0_0_6px_#4ade80]" />
+        </span>
+        <span className="uppercase tracking-wide">Intervention rapide 7J/7</span>
+        <span className="hidden sm:inline text-white/60">·</span>
+        <span className="inline-flex items-center gap-1.5">
+          <MessageSquare size={13} strokeWidth={2.5} />
+          <span className="hidden sm:inline">Envoyez un SMS au</span> +33 {CONTACT.phoneDisplay}
+        </span>
+      </a>
+
+      <div className="hazard-strip h-1.5 w-full fixed top-9 left-0 z-[60]" />
       <header
-        className={`fixed top-1.5 left-0 right-0 z-50 transition-colors duration-300 ${
+        className={`fixed top-[2.625rem] left-0 right-0 z-50 transition-colors duration-300 ${
           scrolled ? "glass border-b border-zinc-800" : "bg-transparent"
         }`}
         data-testid="site-header"
