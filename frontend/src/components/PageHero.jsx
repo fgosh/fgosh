@@ -16,7 +16,7 @@ export const PageHero = ({ eyebrow, title, highlight, subtitle, image }) => (
     <div className="container-x relative z-10">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-5 font-display font-extrabold uppercase tracking-tight text-white text-4xl sm:text-5xl lg:text-6xl leading-[0.95] max-w-3xl">
+        <h1 className="mt-5 font-display font-extrabold uppercase tracking-tight text-white fluid-page max-w-full">
           {title} {highlight && <span className="text-voltage">{highlight}</span>}
         </h1>
         {subtitle && <p className="mt-5 text-zinc-300 text-base sm:text-lg max-w-2xl leading-relaxed">{subtitle}</p>}

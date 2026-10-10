@@ -34,11 +34,11 @@ export const Hero = () => {
           <Zap size={13} fill="currentColor" /> Intervention rapide 7J/7
         </motion.div>
 
-        <h1 className="font-display font-extrabold uppercase tracking-tight leading-[0.92] text-white text-[13vw] sm:text-7xl lg:text-8xl">
+        <h1 className="font-display font-extrabold uppercase tracking-tight leading-[0.92] text-white fluid-h1">
           {LINES.map((line, i) => (
             <span key={i} className="block overflow-hidden">
               <motion.span
-                className="block"
+                className="block whitespace-nowrap"
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.15 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
