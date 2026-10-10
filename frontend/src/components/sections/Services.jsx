@@ -8,7 +8,7 @@ export const Services = () => (
     <div className="container-x">
       <Reveal>
         <Eyebrow>Nos services</Eyebrow>
-        <h2 className="mt-5 font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl text-white max-w-2xl leading-tight">
+        <h2 className="mt-5 font-display font-bold uppercase tracking-tight fluid-page text-white leading-tight">
           Tous types de nids, <span className="text-voltage">partout</span> en Haute-Garonne
         </h2>
       </Reveal>
