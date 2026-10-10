@@ -9,7 +9,7 @@ export const WhyUs = () => (
     <div className="container-x">
       <Reveal>
         <Eyebrow>Pourquoi TGF</Eyebrow>
-        <h2 className="mt-5 font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl lg:text-5xl text-white max-w-2xl leading-tight">
+        <h2 className="mt-5 font-display font-bold uppercase tracking-tight fluid-page text-white leading-tight">
           Un service <span className="text-voltage">professionnel</span> et réactif
         </h2>
       </Reveal>
