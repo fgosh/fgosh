@@ -5,10 +5,13 @@ import { PageHero } from "../components/PageHero";
 import { Reveal, Eyebrow } from "../components/Reveal";
 import { FranceMap } from "../components/FranceMap";
 import { CtaBanner } from "../components/sections/CtaBanner";
-import { CITIES } from "../lib/data";
+import { CITIES, MAP_PINS } from "../lib/data";
+
+const PINNED = new Set(MAP_PINS.map((p) => p.city));
 
 export default function Zones() {
   const [query, setQuery] = useState("");
+  const [selected, setSelected] = useState(null);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -34,10 +37,11 @@ export default function Zones() {
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <Reveal>
             <div className="rounded-3xl border border-zinc-800 bg-card p-6 sm:p-10">
-              <FranceMap />
+              <FranceMap selected={selected} onSelect={setSelected} />
             </div>
             <p className="mt-4 text-center text-zinc-500 font-mono2 text-xs uppercase tracking-widest">
-              <MapPin size={13} className="inline text-red-500 mr-1" /> Épingles rouges = communes desservies
+              <MapPin size={13} className="inline text-red-500 mr-1" /> Épingles rouges = communes desservies ·
+              <MapPin size={13} className="inline text-green-500 mx-1" /> ville sélectionnée
             </p>
           </Reveal>
 
@@ -46,6 +50,9 @@ export default function Zones() {
             <h2 className="mt-5 font-display font-bold uppercase tracking-tight text-3xl sm:text-4xl text-white leading-tight">
               Votre ville est-elle <span className="text-voltage">couverte</span> ?
             </h2>
+            <p className="mt-3 text-zinc-400 text-sm">
+              Cliquez sur une ville : si elle figure sur la carte, son épingle passe au vert.
+            </p>
             <div className="mt-6 relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" size={18} />
               <input
@@ -62,11 +69,26 @@ export default function Zones() {
                   Ville non listée ? Appelez-nous, nous couvrons peut-être votre secteur.
                 </p>
               ) : (
-                filtered.map((c) => (
-                  <span key={c} className="font-mono2 text-[11px] uppercase tracking-wider text-zinc-300 border border-zinc-800 hover:border-voltage/50 px-2.5 py-1.5 transition-colors">
-                    {c}
-                  </span>
-                ))
+                filtered.map((c) => {
+                  const isSel = selected === c;
+                  const hasPin = PINNED.has(c);
+                  return (
+                    <button
+                      key={c}
+                      type="button"
+                      data-testid={`zone-city-${c.toLowerCase().replace(/[^a-z]/g, "-")}`}
+                      onClick={() => setSelected(isSel ? null : c)}
+                      className={`inline-flex items-center gap-1.5 font-mono2 text-[11px] uppercase tracking-wider px-2.5 py-1.5 border transition-colors ${
+                        isSel
+                          ? "border-green-500 text-green-400 bg-green-500/10"
+                          : "border-zinc-800 text-zinc-300 hover:border-voltage/50"
+                      }`}
+                    >
+                      {hasPin && <span className={`w-1.5 h-1.5 rounded-full ${isSel ? "bg-green-500" : "bg-red-500"}`} />}
+                      {c}
+                    </button>
+                  );
+                })
               )}
             </div>
             <p className="mt-4 text-zinc-500 text-sm">{filtered.length} commune(s) affichée(s)</p>
