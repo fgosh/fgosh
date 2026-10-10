@@ -164,22 +164,23 @@ export const VIDEOS = [
   { title: "Intervention en hauteur à la perche", youtubeId: "" },
 ];
 
-// Red map pins (x / y are % positions over the France SVG, clustered around Toulouse)
+// Red map pins — positions (% of the 1024 France SVG viewBox) computed from real
+// GPS coordinates calibrated on the map's measured bounding box (incl. Corsica).
 export const MAP_PINS = [
-  { city: "Toulouse", x: 47.8, y: 86.0, major: true },
-  { city: "Blagnac", x: 47.2, y: 85.4 },
-  { city: "Colomiers", x: 46.6, y: 85.6 },
-  { city: "Tournefeuille", x: 46.8, y: 86.2 },
-  { city: "Cugnaux", x: 47.0, y: 86.8 },
-  { city: "Muret", x: 46.9, y: 87.6 },
-  { city: "Balma", x: 48.4, y: 85.6 },
-  { city: "L'Union", x: 48.2, y: 85.0 },
-  { city: "Castanet-Tolosan", x: 48.5, y: 86.9 },
-  { city: "Fronton", x: 47.4, y: 83.2 },
-  { city: "Revel", x: 52.6, y: 87.4 },
-  { city: "Grenade", x: 46.4, y: 83.6 },
-  { city: "Auch (Gers)", x: 41.4, y: 85.6 },
-  { city: "Saint-Gaudens", x: 42.6, y: 91.4 },
+  { city: "Toulouse", x: 37.3, y: 69.8, major: true },
+  { city: "Blagnac", x: 37.0, y: 69.5 },
+  { city: "Colomiers", x: 36.6, y: 69.7 },
+  { city: "Tournefeuille", x: 36.7, y: 70.0 },
+  { city: "Cugnaux", x: 36.7, y: 70.4 },
+  { city: "Muret", x: 36.6, y: 71.1 },
+  { city: "Balma", x: 37.6, y: 69.7 },
+  { city: "L'Union", x: 37.5, y: 69.3 },
+  { city: "Castanet-Tolosan", x: 37.6, y: 70.6 },
+  { city: "Fronton", x: 36.9, y: 67.7 },
+  { city: "Revel", x: 40.6, y: 71.1 },
+  { city: "Grenade", x: 36.4, y: 68.3 },
+  { city: "Auch (Gers)", x: 32.1, y: 69.4 },
+  { city: "Saint-Gaudens", x: 33.0, y: 74.3 },
 ];
 
 export const CITIES = [
