@@ -1,0 +1,39 @@
+TGF — Toulouse Guêpes Frelons · Site statique léger
+====================================================
+
+CONTENU DU DOSSIER
+------------------
+index.html            La page (onepage) complète
+favicon.svg           Logo / favicon
+og-cover.jpg          Image d'aperçu réseaux sociaux (1200x805)
+robots.txt            Indexation moteurs de recherche
+sitemap.xml           Plan du site
+.htaccess             Sécurité + cache + HTTPS (serveur Apache / OVH)
+assets/style.css      Styles
+assets/app.js         Interactions (carte, menu, formulaire, vidéos)
+assets/france-data.js Données de la carte de France + communes
+media/                Photos
+
+MISE EN LIGNE (hébergement type OVH)
+------------------------------------
+1. Connectez-vous à votre espace d'hébergement (FTP ou gestionnaire de fichiers).
+2. Envoyez TOUT le contenu de ce dossier à la racine du site (www/ ou public_html/).
+   -> index.html doit être à la racine pour s'ouvrir sur https://toulouseguepesfrelons.fr/
+3. Vérifiez que le fichier .htaccess a bien été copié (fichiers cachés visibles).
+
+À PERSONNALISER AVANT PUBLICATION
+---------------------------------
+• E-MAIL DU FORMULAIRE : ouvrez assets/app.js, ligne « var EMAIL = ... »
+  et remplacez par votre adresse e-mail réelle.
+• VIDÉOS : dans assets/app.js, tableau VIDEOS, remplacez id: "" par l'identifiant
+  YouTube de chaque vidéo (ex. id: "dQw4w9WgXcQ"). La vignette et la lecture
+  s'activent automatiquement.
+• DOMAINE : si votre domaine final diffère, remplacez « toulouseguepesfrelons.fr »
+  dans index.html (balises canonical / og) et dans sitemap.xml / robots.txt.
+
+SÉCURITÉ
+--------
+• Site 100% statique : aucune base de données, surface d'attaque minimale.
+• En-têtes de sécurité via .htaccess : CSP, X-Frame-Options, HSTS, nosniff, etc.
+• Formulaire protégé par un champ "honeypot" anti-spam ; il ouvre l'e-mail
+  du visiteur (mailto), aucune donnée n'est stockée sur un serveur.

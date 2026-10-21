@@ -30,6 +30,14 @@ Ajout : récupérer les photos du site existant https://toulouseguepesfrelons.fr
 - P2 : Interface admin pour consulter les demandes de devis.
 - P2 : Upload photo du nid dans le formulaire (object storage).
 
+## Version statique HTML (ajout 2026-06)
+- Site **onepage statique léger** généré dans `/app/frontend/public/tgf/` (~776 Ko, HTML+CSS+JS ≈ 84 Ko).
+- Prévisualisation : `/tgf/index.html`. Prêt à être uploadé à la racine de l'hébergement du client.
+- Vanilla JS (aucune dépendance) : carte de France interactive (clic ville → épingle verte), recherche communes, reveal au scroll, menu mobile, marquee, modal vidéo, formulaire **mailto** + honeypot anti-spam.
+- Sécurité : `.htaccess` (CSP avec hash du JSON-LD, X-Frame-Options, HSTS, nosniff, Referrer/Permissions-Policy), HTTPS+non-www, compression, cache. 100% statique (pas de BDD).
+- À PERSONNALISER : `assets/app.js` → `EMAIL` (adresse de réception du formulaire) et tableau `VIDEOS` (IDs YouTube). Guide dans `LISEZ-MOI-DEPLOIEMENT.txt`.
+- La version React d'origine reste disponible à la racine `/`.
+
 ## Notes
 - Aucune authentification. Les demandes de devis sont lisibles via GET /api/quotes.
 - Aucune note d'avis clients inventée (pas de faux témoignages) — section « Engagements » à la place.
