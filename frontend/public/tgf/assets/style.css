@@ -195,13 +195,16 @@ body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opa
 .badge-top{position:absolute;top:-13px;left:28px;background:#000;color:var(--voltage);font-family:"JetBrains Mono";font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px}
 
 /* ---------- Videos ---------- */
-.vids{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .vid{position:relative;aspect-ratio:16/9;border:1px solid var(--border);background:var(--card);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;transition:border-color .3s}
 .vid:hover{border-color:rgba(255,230,0,.5)}
 .vid .hz{position:absolute;inset:0;opacity:.12}
 .vid .play{width:48px;height:48px;border-radius:50%;background:var(--voltage);color:#000;display:flex;align-items:center;justify-content:center;z-index:2}
 .vid small{font-family:"JetBrains Mono";font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--voltage);z-index:2}
 .vid .cap{position:absolute;left:0;right:0;bottom:0;padding:10px 12px;background:linear-gradient(to top,#000,transparent);font-size:13px;font-weight:600;text-align:left}
+.vid .fbtag{position:absolute;top:10px;left:10px;display:inline-flex;align-items:center;gap:5px;z-index:2;background:rgba(0,0,0,.65);color:#fff;font-family:"JetBrains Mono";font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:4px 8px;border-radius:4px}
+.vid img{filter:brightness(.72);transition:filter .3s,transform .7s}
+.vid:hover img{filter:brightness(.9);transform:scale(1.06)}
 
 /* ---------- FAQ ---------- */
 .faqwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
@@ -267,8 +270,10 @@ details .ans{padding:0 0 18px;color:var(--muted);font-size:14px}
 /* ---------- Modal ---------- */
 .modal{position:fixed;inset:0;z-index:70;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:16px}
 .modal.open{display:flex}
-.modal .box{width:100%;max-width:900px;aspect-ratio:16/9}
-.modal iframe{width:100%;height:100%;border:0;border-radius:12px}
+.vcol{width:100%;max-width:900px}
+.ratio{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+.ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vfallback{display:block;text-align:center;color:#a1a1aa;font-size:13px;margin-top:12px}
 .modal .x{position:absolute;top:18px;right:18px;color:#fff}
 
 /* scrollbar */
@@ -293,6 +298,14 @@ details .ans{padding:0 0 18px;color:var(--muted);font-size:14px}
   .form .row{grid-template-columns:1fr}
   .announce .label{font-size:11px}
 }
+/* Reviews band */
+.reviews{background:#000}
+.revbox{border:1px solid var(--border);background:var(--card);border-radius:24px;padding:48px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.gbadge{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono";font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#d4d4d8;border:1px solid var(--border);padding:8px 14px;border-radius:999px}
+.stars{display:flex;gap:4px}
+.stars svg{width:28px;height:28px;color:#fbbf24}
+.revbtns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;scroll-behavior:auto}
   .reveal{opacity:1;transform:none}

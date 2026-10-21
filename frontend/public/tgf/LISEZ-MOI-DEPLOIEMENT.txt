@@ -21,15 +21,16 @@ MISE EN LIGNE (hébergement type OVH)
    -> index.html doit être à la racine pour s'ouvrir sur https://toulouseguepesfrelons.fr/
 3. Vérifiez que le fichier .htaccess a bien été copié (fichiers cachés visibles).
 
-À PERSONNALISER AVANT PUBLICATION
----------------------------------
-• E-MAIL DU FORMULAIRE : ouvrez assets/app.js, ligne « var EMAIL = ... »
-  et remplacez par votre adresse e-mail réelle.
-• VIDÉOS : dans assets/app.js, tableau VIDEOS, remplacez id: "" par l'identifiant
-  YouTube de chaque vidéo (ex. id: "dQw4w9WgXcQ"). La vignette et la lecture
-  s'activent automatiquement.
+À PERSONNALISER (OPTIONNEL)
+---------------------------
+• E-MAIL DU FORMULAIRE : déjà configuré sur mikaelcadeac@gmail.com (assets/app.js, var EMAIL).
+• VIDÉOS : 3 vidéos Facebook déjà intégrées (lecteur Facebook officiel). Pour en ajouter/modifier,
+  éditez le tableau VIDEOS dans assets/app.js (champ "url" = lien Facebook, "thumb" = image vignette).
+• AVIS GOOGLE : le bandeau "Avis clients Google" pointe vers une recherche Google de votre
+  établissement. Pour un lien direct vers votre fiche / page d'avis, remplacez les 2 liens
+  de la section <!-- Avis Google --> dans index.html par l'URL exacte de votre fiche Google Business.
 • DOMAINE : si votre domaine final diffère, remplacez « toulouseguepesfrelons.fr »
-  dans index.html (balises canonical / og) et dans sitemap.xml / robots.txt.
+  dans index.html (canonical / og) et dans sitemap.xml / robots.txt.
 
 SÉCURITÉ
 --------

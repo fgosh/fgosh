@@ -2,14 +2,13 @@
 (function () {
   "use strict";
 
-  // ⚠️ E-mail de réception des demandes de devis — À MODIFIER avec votre vraie adresse.
-  var EMAIL = "contact@toulouseguepesfrelons.fr";
+  // ⚠️ E-mail de réception des demandes de devis
+  var EMAIL = "mikaelcadeac@gmail.com";
 
   var VIDEOS = [
-    { title: "Destruction d'un nid de frelons asiatiques", id: "" },
-    { title: "Nid de guêpes sous toiture", id: "" },
-    { title: "Frelon européen dans une charpente", id: "" },
-    { title: "Intervention en hauteur à la perche", id: "" }
+    { title: "Une de nos interventions", url: "https://m.facebook.com/story.php?story_fbid=pfbid02k1oikv8SShQUgRxDx6BSwkrLWMhiWiJzVbpKQW9wyjdDgoCrgGQihQ33ZSSNnZqMl&id=100056824856331", thumb: "media/hero-insect.jpg" },
+    { title: "Le frelon asiatique", url: "https://www.facebook.com/share/v/fZjcSEiFDcKKzwJL/", thumb: "media/asiatique.jpg" },
+    { title: "TGF dans La Dépêche du Midi", url: "https://www.facebook.com/toulouse.guepesfrelons/posts/pfbid02nrzXMihFxr3UdbJm9FG3hEFiBWZyXwoGa5uYk7KrPMD1VivtywLEJYdDdwAuwSNjl", thumb: "media/guepes.jpg" }
   ];
 
   var $ = function (s, c) { return (c || document).querySelector(s); };
@@ -145,26 +144,23 @@
     var grid = $("#videoGrid");
     if (grid) {
       VIDEOS.forEach(function (v) {
-        var cell = document.createElement(v.id ? "button" : "div");
+        var cell = document.createElement("button");
+        cell.type = "button";
         cell.className = "vid";
-        if (v.id) {
-          cell.type = "button";
-          cell.innerHTML = '<img src="https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg" alt="' + v.title + '" style="width:100%;height:100%;object-fit:cover">' +
-            '<span class="play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span>' +
-            '<span class="cap">' + v.title + '</span>';
-          cell.addEventListener("click", function () { openVideo(v.id, v.title); });
-        } else {
-          cell.innerHTML = '<span class="hz hazard"></span>' +
-            '<span class="play"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></span>' +
-            '<small>Bientôt disponible</small><span class="cap">' + v.title + '</span>';
-        }
+        cell.innerHTML = '<img src="' + v.thumb + '" alt="' + v.title + '" loading="lazy" style="width:100%;height:100%;object-fit:cover">' +
+          '<span class="play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span>' +
+          '<span class="fbtag"><svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg> Facebook</span>' +
+          '<span class="cap">' + v.title + '</span>';
+        cell.addEventListener("click", function () { openVideo(v.url, v.title); });
         grid.appendChild(cell);
       });
     }
 
-    var modal = $("#videoModal"), box = $("#videoBox");
-    function openVideo(id, title) {
-      box.innerHTML = '<iframe src="https://www.youtube.com/embed/' + id + '?autoplay=1" title="' + title + '" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    var modal = $("#videoModal"), box = $("#videoBox"), fallback = $("#videoFallback");
+    function openVideo(url, title) {
+      var src = "https://www.facebook.com/plugins/video.php?href=" + enc(url) + "&show_text=false&autoplay=true";
+      box.innerHTML = '<div class="ratio"><iframe src="' + src + '" title="' + title + '" scrolling="no" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>';
+      fallback.href = url;
       modal.classList.add("open");
     }
     function closeVideo() { modal.classList.remove("open"); box.innerHTML = ""; }
