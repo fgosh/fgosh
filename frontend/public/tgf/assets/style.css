@@ -298,6 +298,19 @@ details .ans{padding:0 0 18px;color:var(--muted);font-size:14px}
   .form .row{grid-template-columns:1fr}
   .announce .label{font-size:11px}
 }
+/* Legal page */
+.legal-top{background:#000;border-bottom:1px solid var(--border)}
+.legal{padding:48px 0 64px;position:relative;z-index:10}
+.legal .container{max-width:860px}
+.legal h1{margin-bottom:8px}
+.legal .updated{color:#71717a;font-family:"JetBrains Mono";font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:32px}
+.legal h2{font-family:"Outfit";font-size:22px;margin:36px 0 10px;color:#fff}
+.legal h3{font-family:"Outfit";font-size:17px;margin:22px 0 6px;color:var(--voltage)}
+.legal p,.legal li{color:#d4d4d8;font-size:15px;line-height:1.7}
+.legal ul{margin:10px 0 10px 20px;display:flex;flex-direction:column;gap:6px}
+.legal a{color:var(--voltage);text-decoration:underline;text-underline-offset:3px}
+.legal i{color:#a1a1aa}
+
 /* Reviews band */
 .reviews{background:#000}
 .revbox{border:1px solid var(--border);background:var(--card);border-radius:24px;padding:48px 32px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
