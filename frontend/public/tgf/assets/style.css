@@ -5,11 +5,12 @@
   --radius:16px;--max:1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+*{min-width:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;max-width:100%}
 body{
   background:var(--bg);color:var(--txt);
   font-family:"Plus Jakarta Sans",system-ui,-apple-system,sans-serif;
-  line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  line-height:1.55;overflow-x:hidden;max-width:100%;-webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
@@ -40,7 +41,7 @@ body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opa
 /* ---------- Announcement + Header ---------- */
 .announce{position:fixed;top:0;left:0;right:0;z-index:60;height:36px;display:flex;align-items:center;
   justify-content:center;gap:10px;background:var(--red);color:#fff;font-size:12px;font-weight:600;
-  padding:0 14px;transition:background .2s}
+  padding:0 14px;transition:background .2s;white-space:nowrap;overflow:hidden}
 .announce:hover{background:#dc2626}
 .announce .label{text-transform:uppercase;letter-spacing:.04em}
 .announce .sep{opacity:.5}
@@ -297,6 +298,11 @@ details .ans{padding:0 0 18px;color:var(--muted);font-size:14px}
   .metrics{grid-template-columns:repeat(2,1fr)}
   .form .row{grid-template-columns:1fr}
   .announce .label{font-size:11px}
+  .fluid-h2{white-space:normal}
+}
+@media(max-width:480px){
+  .announce{font-size:11px;gap:7px}
+  .announce .sep,.announce .hide-xs{display:none}
 }
 /* Legal page */
 .legal-top{background:#000;border-bottom:1px solid var(--border)}
